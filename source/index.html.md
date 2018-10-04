@@ -88,7 +88,7 @@ require 'rest-client'
 
 url = "https://samplebowlingapi.com/api/v1/players"
 
-response = RestClient.post url, {first_name: 'John', last_name: "Smith"}
+response = RestClient.post url, {first_name: 'John', last_name: "Smith", email: "johns@gmail.com"}
 
 data = response.body
 ```
@@ -122,7 +122,8 @@ curl_close($ch);
       "generated_at_unix": 1516751509,
       "first_name": "John",
       "last_name": "Smith",
-      "gender": "Male",
+      "email": "johns@gmail.com",
+      "gender": "male",
       "bio": "John is a professional bowler with a handicap of XYZ",
       "average_score": 201.2,
       "games": [
@@ -155,6 +156,7 @@ first_name | String | The first name of player
 last_name | String | The last name of player
 gender | String | The gender of player (male, female or other)
 bio | String | The biography of player
+email | String | Email of player
 
 
 ### Fields Returned
@@ -168,6 +170,7 @@ first_name | String | First name of player
 last_name | String | Last name of player
 gender | String | Gender of player
 bio | String | Biography of player
+email | String | Email of player
 average_score | Decimal | Average score across all games for player
 games | Array | Array of all game data for player
 
@@ -210,7 +213,8 @@ curl_close($ch);
       "generated_at_unix": 1516751509,
       "first_name": "John",
       "last_name": "Smith",
-      "gender": "Male",
+      "email": "johns@gmail.com",
+      "gender": "male",
       "bio": "John is a professional bowler with a handicap of XYZ",
       "average_score": 201.2,
       "games": [
@@ -250,6 +254,7 @@ entity_type | String | Entity/Record type
 entity_id | Integer | Unique ID for given entity type
 first_name | String | First name of player
 last_name | String | Last name of player
+email | String | Email of player
 gender | String | Gender of player
 bio | String | Biography of player
 average_score | Decimal | Average score across all games for player
